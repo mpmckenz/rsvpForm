@@ -1,0 +1,26 @@
+doctype
+html
+  head
+    link(rel="stylesheet" href="style.css")
+    title Guest List
+
+  body
+    h1 Current Guest List: 
+
+    div#list
+      div 
+        h3 Attendees:
+        each attendee in attending
+          li= `${attendee.name} and ${attendee.guests} Guest(s)`
+            //- div= `${attendee.name}'s Guests, ${attendee.guests}`
+          div ~~~
+      br
+      div 
+        h3 Not attending:
+        each attendee in notAttending
+          li= `${attendee.name}`
+          div ~~~
+
+    br
+    br
+    a(href="/") Go Back to the Form
